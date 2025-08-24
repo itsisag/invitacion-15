@@ -80,6 +80,18 @@
 
 /* Optimizaciones específicas para pantallas muy pequeñas */
 @media screen and (max-width: 360px) {
+  /* Eliminar completamente los bordes blancos */
+  html, body, .scroll, .scroll .div {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
   /* Reducir aún más el blur para pantallas pequeñas */
   :root {
     --reveal-blur: 2px;
@@ -88,7 +100,7 @@
   
   /* Mejorar el espaciado en pantallas muy pequeñas */
   .scroll .div {
-    padding: 0 8px;
+    padding: 0 !important;
   }
   
   /* Ajustar el tamaño mínimo de elementos táctiles */
@@ -250,5 +262,77 @@
     right: 10px;
     width: 35px;
     height: 35px;
+  }
+}
+
+/* Optimizaciones para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  /* Eliminar bordes blancos en móviles */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    background-color: #000000 !important;
+  }
+  
+  /* Asegurar que el contenedor principal ocupe todo el ancho */
+  .scroll {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  .scroll .div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  /* Ajustar elementos para que ocupen todo el ancho disponible */
+  .scroll .overlap,
+  .scroll .overlap-2,
+  .scroll .overlap-3 {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  /* Ajustar botones para móviles */
+  .scroll .btn-musica {
+    min-width: 60px;
+    min-height: 60px;
+  }
+  
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    min-height: 60px;
+  }
+  
+  .scroll .botonconfirmar:active,
+  .scroll .botondireccion:active {
+    transform: scale(0.98);
+  }
+  
+  /* Optimizar el scroll en móviles */
+  .scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Mejorar la legibilidad de elementos pequeños */
+  .scroll .element,
+  .scroll .element-de-enero,
+  .scroll .sbado,
+  .scroll .ohora,
+  .scroll .ohora-2 {
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
   }
 }

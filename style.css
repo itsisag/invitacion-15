@@ -14,18 +14,21 @@
   min-height: 100vh;
   /* ocupa al menos toda la pantalla */
   overflow-x: hidden; /* Evita scroll horizontal */
+  width: 100vw; /* Ocupa todo el ancho del viewport */
+  position: relative;
 }
 
 /* Ajustes responsive generales */
 .scroll .div {
   width: 100%;
-  max-width: 1211px;
+  max-width: 100%; /* Cambiado de 1211px a 100% */
   min-height: 8000px;
   /* que al menos ocupe la pantalla */
   position: relative;
-  margin: 0 auto;
+  margin: 0; /* Cambiado de 0 auto a 0 */
   /* centra el contenido */
   box-sizing: border-box; /* Incluye padding en el ancho */
+  padding: 0; /* Asegura que no haya padding */
 }
 
 /* Asegurar que las imágenes sean responsive */
@@ -107,7 +110,7 @@
 
 .scroll .overlap {
   position: absolute;
-  width: 1211px;
+  width: 100%; /* Cambiado de 1211px a 100% */
   height: 1724px;
   top: 6054px;
   left: 0;
@@ -160,7 +163,7 @@
 
 .scroll .estrellasgracias {
   position: absolute;
-  width: 1211px;
+  width: 100%; /* Cambiado de 1211px a 100% */
   height: 645px;
   top: 1079px;
   left: 0;
@@ -171,9 +174,9 @@
 
 .scroll .te-esperamos {
   position: absolute;
-  width: 891px;
+  width: 90%; /* Cambiado de 891px a 90% */
   top: 1500px;
-  left: 145px;
+  left: 5%; /* Cambiado de 145px a 5% */
   text-shadow: 0px 10px 10px #00000040;
   background: linear-gradient(90deg,
       rgba(254, 199, 138, 1) 14%,
@@ -195,9 +198,9 @@
 
 .scroll .gracias-por-ser {
   position: absolute;
-  width: 1055px;
+  width: 90%; /* Cambiado de 1055px a 90% */
   top: 1160px;
-  left: 78px;
+  left: 5%; /* Cambiado de 78px a 5% */
   text-shadow: 0px 10px 10px #00000040;
   background: linear-gradient(90deg,
       rgba(254, 199, 138, 1) 14%,
@@ -227,7 +230,7 @@
 
 .scroll .degradadoconfirmar {
   position: absolute;
-  width: 1211px;
+  width: 100%; /* Cambiado de 1211px a 100% */
   height: 880px;
   top: 217px;
   left: 0;
@@ -235,7 +238,7 @@
 
 .scroll .listonconfirmar {
   position: absolute;
-  width: 1211px;
+  width: 100%; /* Cambiado de 1211px a 100% */
   height: 250px;
   top: 950px;
   left: 0;
@@ -243,18 +246,18 @@
 
 .scroll .botonconfirmar {
   position: absolute;
-  width: 465px;
+  width: 40%; /* Cambiado de 465px a 40% */
   height: 117px;
   top: 768px;
-  left: 378px;
+  left: 30%; /* Cambiado de 378px a 30% */
 }
 
 .scroll .por-favor-confirma {
   position: absolute;
-  width: 669px;
+  width: 60%; /* Cambiado de 669px a 60% */
   height: 184px;
   top: 471px;
-  left: 269px;
+  left: 20%; /* Cambiado de 269px a 20% */
 }
 
 .scroll .img {
@@ -1191,7 +1194,7 @@
   .scroll .traje-de-gala-con,
   .scroll .smoking-corbat-n-o {
     font-size: 24px;
-    width: 95%;
+    width: 90%;
     left: 2.5%;
   }
   
@@ -1771,4 +1774,47 @@
   .scroll .smoking-corbat-n-o {
     top: 3100px;
   }
+}
+
+/* ===== REGLAS ADICIONALES PARA ELIMINAR BORDES BLANCOS ===== */
+
+/* Asegurar que no haya bordes blancos en ningún dispositivo */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+  background-color: #000000 !important;
+}
+
+/* Contenedor principal sin bordes */
+.scroll {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+/* Contenedor interno sin bordes */
+.scroll .div {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Eliminar bordes de todos los elementos */
+.scroll * {
+  box-sizing: border-box !important;
+}
+
+/* Asegurar que las imágenes no causen scroll horizontal */
+.scroll img {
+  max-width: 100% !important;
+  height: auto !important;
 }
