@@ -1,44 +1,94 @@
 .scroll {
   margin: 0;
   padding: 0;
-  background-image: url("img/bgnegro.webp"); /* ruta de tu imagen */
-  background-size: cover; /* ajusta la imagen */
-  background-position: center; /* centra la imagen */
-  background-repeat: no-repeat; /* evita repetición */
-  background-attachment: fixed; /* mantiene el fondo fijo al hacer scroll */
-  min-height: 100vh; /* ocupa al menos toda la pantalla */
+  background-image: url("img/bgnegro.webp");
+  /* ruta de tu imagen */
+  background-size: cover;
+  /* ajusta la imagen */
+  background-position: center;
+  /* centra la imagen */
+  background-repeat: no-repeat;
+  /* evita repeticiÃ³n */
+  background-attachment: fixed;
+  /* mantiene el fondo fijo al hacer scroll */
+  min-height: 100vh;
+  /* ocupa al menos toda la pantalla */
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
-/* Ajustes rápidos y variables reutilizables */
-:root{
-  --reveal-distance: 5px;    /* movimiento vertical */
-  --reveal-blur: 6px;        /* intensidad del blur inicial */
-  --reveal-duration: .9s;    /* duración de la animación */
+/* Ajustes responsive generales */
+.scroll .div {
+  width: 100%;
+  max-width: 1211px;
+  min-height: 8000px;
+  /* que al menos ocupe la pantalla */
+  position: relative;
+  margin: 0 auto;
+  /* centra el contenido */
+  box-sizing: border-box; /* Incluye padding en el ancho */
 }
 
-/* Estado inicial: oculto + un poco más abajo + desenfocado */
-.reveal{
+/* Asegurar que las imágenes sean responsive */
+.scroll img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustes para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .scroll .btn-musica {
+    min-width: 60px;
+    min-height: 60px;
+  }
+  
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    min-height: 60px;
+  }
+}
+
+/* Mejoras para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .scroll {
+    background-image: url("img/bgnegro.webp");
+    background-size: cover;
+  }
+}
+
+/* Ajustes rÃ¡pidos y variables reutilizables */
+:root {
+  --reveal-distance: 5px;
+  /* movimiento vertical */
+  --reveal-blur: 6px;
+  /* intensidad del blur inicial */
+  --reveal-duration: .9s;
+  /* duraciÃ³n de la animaciÃ³n */
+}
+
+/* Estado inicial: oculto + un poco mÃ¡s abajo + desenfocado */
+.reveal {
   opacity: 0;
   transform: translateY(var(--reveal-distance));
   filter: blur(var(--reveal-blur));
   will-change: opacity, transform, filter;
 }
 
-/* Al hacerse visible: ejecuta la animación */
-.reveal.is-visible{
+/* Al hacerse visible: ejecuta la animaciÃ³n */
+.reveal.is-visible {
   animation: blurUp var(--reveal-duration) ease-out forwards;
   /* Puedes retrasar cada elemento con una variable: */
   animation-delay: var(--delay, 0s);
 }
 
-/* La animación */
-@keyframes blurUp{
-  0%{
+/* La animaciÃ³n */
+@keyframes blurUp {
+  0% {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     filter: blur(var(--reveal-blur));
   }
-  100%{
+
+  100% {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
@@ -46,22 +96,13 @@
 }
 
 /* Accesibilidad: si el usuario prefiere menos movimiento */
-@media (prefers-reduced-motion: reduce){
-  .reveal{
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
     opacity: 1;
     transform: none;
     filter: none;
     animation: none !important;
   }
-}
-
-
-.scroll .div {
-  width: 100%;
-  max-width: 1211px;
-  min-height: 8000px; /* que al menos ocupe la pantalla */
-  position: relative;
-  margin: 0 auto; /* centra el contenido */
 }
 
 .scroll .overlap {
@@ -74,9 +115,12 @@
 
 .scroll .btn-musica {
   position: absolute;
-  top: 118px;  /* igual que la máscara */
-  left: 530px; /* igual que la máscara */
-  width: 80px; /* ajusta tamaño */
+  top: 118px;
+  /* igual que la mÃ¡scara */
+  left: 530px;
+  /* igual que la mÃ¡scara */
+  width: 80px;
+  /* ajusta tamaÃ±o */
   height: 80px;
   background: none;
   border: none;
@@ -96,13 +140,11 @@
   top: 1700px;
   left: 60;
   text-shadow: 0px 10px 10px #00000040;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 14%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 84%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 14%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 84%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -133,13 +175,11 @@
   top: 1500px;
   left: 145px;
   text-shadow: 0px 10px 10px #00000040;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 14%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 84%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 14%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 84%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -159,13 +199,11 @@
   top: 1160px;
   left: 78px;
   text-shadow: 0px 10px 10px #00000040;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 14%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 84%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 14%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 84%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -232,13 +270,11 @@
   width: 1051px;
   top: 0;
   left: 80px;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 0%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 0%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 100%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -262,13 +298,11 @@
   width: 404px;
   top: 5721px;
   left: 674px;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 0%,
-    rgba(248, 210, 167, 1) 21%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 0%,
+      rgba(248, 210, 167, 1) 21%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 100%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -309,13 +343,11 @@
   width: 404px;
   top: 5721px;
   left: 134px;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 0%,
-    rgba(248, 210, 167, 1) 21%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 0%,
+      rgba(248, 210, 167, 1) 21%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 100%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -367,13 +399,11 @@
   width: 659px;
   top: 5159px;
   left: 276px;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 14%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 84%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 14%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 84%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -425,13 +455,11 @@
   width: 919px;
   top: 4122px;
   left: 146px;
-  background: linear-gradient(
-    90deg,
-    rgba(254, 199, 138, 1) 14%,
-    rgba(248, 210, 167, 1) 31%,
-    rgba(255, 246, 231, 1) 51%,
-    rgba(254, 199, 138, 1) 84%
-  );
+  background: linear-gradient(90deg,
+      rgba(254, 199, 138, 1) 14%,
+      rgba(248, 210, 167, 1) 31%,
+      rgba(255, 246, 231, 1) 51%,
+      rgba(254, 199, 138, 1) 84%);
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -694,7 +722,7 @@
   left: 176px;
 }
 
-.scroll .mascara{
+.scroll .mascara {
   position: absolute;
   width: 514px;
   height: 514px;
@@ -724,4 +752,1023 @@
   object-fit: cover;
 }
 
+/* ===== MEDIA QUERIES RESPONSIVE ===== */
 
+/* Tablets y pantallas medianas */
+@media screen and (max-width: 1024px) {
+  .scroll .div {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .scroll .overlap,
+  .scroll .overlap-2,
+  .scroll .overlap-3 {
+    width: 100%;
+    left: 0;
+  }
+  
+  .scroll .countdown {
+    font-size: 80px;
+    top: 1200px;
+  }
+  
+  .scroll .te-esperamos {
+    width: 80%;
+    left: 10%;
+    font-size: 70px;
+    top: 1000px;
+  }
+  
+  .scroll .gracias-por-ser {
+    width: 90%;
+    left: 5%;
+    font-size: 50px;
+    top: 900px;
+  }
+  
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o {
+    width: 80%;
+    left: 10%;
+    font-size: 40px;
+  }
+  
+  .scroll .text-wrapper-4 {
+    width: 80%;
+    left: 10%;
+    font-size: 70px;
+  }
+  
+  .scroll .si-deseas-tener-un {
+    width: 90%;
+    left: 5%;
+    font-size: 50px;
+  }
+  
+  .scroll .acompame-a-celebrar {
+    width: 90%;
+    left: 5%;
+  }
+  
+  .scroll .estoy-por-vivir-un {
+    width: 90%;
+    left: 5%;
+  }
+  
+  .scroll .hay-momentos-que-se {
+    width: 90%;
+    left: 5%;
+  }
+  
+  .scroll .MARIANA {
+    width: 80%;
+    left: 10%;
+  }
+  
+  .scroll .mascara {
+    width: 60%;
+    left: 20%;
+  }
+  
+  .scroll .omascara {
+    width: 80%;
+    left: 10%;
+  }
+  
+  .scroll .luzmascara {
+    width: 70%;
+    left: 15%;
+  }
+  
+  .scroll .oizq,
+  .scroll .oder {
+    width: 40%;
+  }
+  
+  .scroll .oizq {
+    left: 60%;
+  }
+  
+  .scroll .btn-musica {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablets pequeñas */
+@media screen and (max-width: 768px) {
+  .scroll .div {
+    min-height: 6000px;
+  }
+  
+  .scroll .countdown {
+    font-size: 60px;
+    top: 1000px;
+  }
+  
+  .scroll .te-esperamos {
+    font-size: 50px;
+    top: 800px;
+  }
+  
+  .scroll .gracias-por-ser {
+    font-size: 40px;
+    top: 700px;
+  }
+  
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o {
+    font-size: 30px;
+    width: 90%;
+    left: 5%;
+  }
+  
+  .scroll .text-wrapper-4 {
+    font-size: 50px;
+    top: 4000px;
+  }
+  
+  .scroll .si-deseas-tener-un {
+    font-size: 35px;
+    top: 3500px;
+  }
+  
+  .scroll .acompame-a-celebrar {
+    width: 95%;
+    left: 2.5%;
+    top: 1000px;
+  }
+  
+  .scroll .estoy-por-vivir-un {
+    width: 95%;
+    left: 2.5%;
+    top: 800px;
+  }
+  
+  .scroll .hay-momentos-que-se {
+    width: 95%;
+    left: 2.5%;
+    top: 700px;
+  }
+  
+  .scroll .MARIANA {
+    width: 90%;
+    left: 5%;
+    top: 500px;
+  }
+  
+  .scroll .mascara {
+    width: 70%;
+    left: 15%;
+    top: 100px;
+  }
+  
+  .scroll .omascara {
+    width: 90%;
+    left: 5%;
+    top: 150px;
+  }
+  
+  .scroll .luzmascara {
+    width: 80%;
+    left: 10%;
+    top: 50px;
+  }
+  
+  .scroll .oizq,
+  .scroll .oder {
+    width: 45%;
+  }
+  
+  .scroll .oizq {
+    left: 55%;
+  }
+  
+  .scroll .btn-musica {
+    width: 60px;
+    height: 60px;
+    top: 80px;
+  }
+  
+  .scroll .por-favor-confirma {
+    width: 80%;
+    left: 10%;
+    top: 350px;
+  }
+  
+  .scroll .botonconfirmar {
+    width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 600px;
+  }
+  
+  .scroll .botondireccion {
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1300px;
+  }
+  
+  .scroll .calle {
+    width: 80%;
+    left: 10%;
+    top: 1100px;
+  }
+  
+  .scroll .laion-eventos {
+    width: 80%;
+    left: 10%;
+    top: 1000px;
+  }
+  
+  .scroll .element-PM {
+    width: 60%;
+    left: 20%;
+    top: 900px;
+  }
+  
+  .scroll .ohora,
+  .scroll .ohora-2 {
+    width: 50%;
+  }
+  
+  .scroll .ohora {
+    left: 50%;
+  }
+  
+  .scroll .ohora-2 {
+    left: 0;
+  }
+  
+  .scroll .element {
+    width: 30%;
+    left: 35%;
+    top: 750px;
+  }
+  
+  .scroll .element-de-enero {
+    width: 80%;
+    left: 10%;
+    top: 650px;
+  }
+  
+  .scroll .sbado {
+    width: 50%;
+    left: 25%;
+    top: 550px;
+  }
+  
+  .scroll .liston {
+    top: 350px;
+  }
+  
+  .scroll .o {
+    width: 70%;
+    left: 15%;
+    top: 200px;
+  }
+  
+  .scroll .aos {
+    width: 40%;
+    left: 30%;
+    top: 180px;
+  }
+  
+  .scroll .XV {
+    width: 35%;
+    left: 32.5%;
+    top: 70px;
+  }
+  
+  .scroll .o-s {
+    width: 70%;
+    left: 15%;
+    top: 0;
+  }
+  
+  .scroll .el-color-reservado {
+    width: 90%;
+    left: 5%;
+    font-size: 35px;
+    top: 0;
+  }
+  
+  .scroll .text-wrapper-2 {
+    font-size: 50px;
+  }
+  
+  .scroll .estrellasgracias {
+    top: 900px;
+  }
+  
+  .scroll .degradadoconfirmar {
+    top: 150px;
+  }
+  
+  .scroll .listonconfirmar {
+    top: 800px;
+  }
+  
+  .scroll .img {
+    top: 100px;
+  }
+  
+  .scroll .overlap {
+    top: 5000px;
+  }
+  
+  .scroll .overlap-2 {
+    top: 1200px;
+  }
+  
+  .scroll .overlap-3 {
+    top: 30px;
+  }
+  
+  .scroll .sobre {
+    width: 60%;
+    left: 20%;
+    top: 1600px;
+  }
+  
+  .scroll .degradado {
+    top: 400px;
+  }
+  
+  .scroll .listo {
+    top: 1500px;
+  }
+  
+  .scroll .overlap-group {
+    width: 80%;
+    left: 10%;
+    top: 3800px;
+  }
+  
+  .scroll .otrajes {
+    width: 80%;
+    left: 10%;
+  }
+  
+  .scroll .trajes {
+    width: 60%;
+    left: 20%;
+  }
+  
+  .scroll .ovestuario,
+  .scroll .ovestuario-2 {
+    width: 70%;
+    top: 4500px;
+  }
+  
+  .scroll .ovestuario-2 {
+    left: 30%;
+  }
+  
+  .scroll .cdigo-de-vestuario {
+    width: 70%;
+    left: 15%;
+    top: 4200px;
+  }
+  
+  .scroll .mujeres {
+    width: 60%;
+    left: 20%;
+    top: 4800px;
+  }
+  
+  .scroll .hombres {
+    width: 70%;
+    left: 15%;
+    top: 4800px;
+  }
+  
+  .scroll .lineamujer {
+    width: 60%;
+    left: 20%;
+    top: 4900px;
+  }
+  
+  .scroll .lineahombre {
+    width: 70%;
+    left: 15%;
+    top: 4900px;
+  }
+  
+  .scroll .traje-de-gala-con {
+    top: 5000px;
+  }
+  
+  .scroll .smoking-corbat-n-o {
+    top: 5000px;
+  }
+}
+
+/* Móviles grandes */
+@media screen and (max-width: 480px) {
+  .scroll .div {
+    min-height: 5000px;
+    padding: 0 10px;
+  }
+  
+  .scroll .countdown {
+    font-size: 40px;
+    top: 800px;
+  }
+  
+  .scroll .te-esperamos {
+    font-size: 35px;
+    top: 650px;
+  }
+  
+  .scroll .gracias-por-ser {
+    font-size: 28px;
+    top: 550px;
+  }
+  
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o {
+    font-size: 24px;
+    width: 95%;
+    left: 2.5%;
+  }
+  
+  .scroll .text-wrapper-4 {
+    font-size: 35px;
+    top: 3200px;
+  }
+  
+  .scroll .si-deseas-tener-un {
+    font-size: 25px;
+    top: 2800px;
+  }
+  
+  .scroll .acompame-a-celebrar {
+    width: 98%;
+    left: 1%;
+    top: 800px;
+  }
+  
+  .scroll .estoy-por-vivir-un {
+    width: 98%;
+    left: 1%;
+    top: 650px;
+  }
+  
+  .scroll .hay-momentos-que-se {
+    width: 98%;
+    left: 1%;
+    top: 550px;
+  }
+  
+  .scroll .MARIANA {
+    width: 95%;
+    left: 2.5%;
+    top: 400px;
+  }
+  
+  .scroll .mascara {
+    width: 80%;
+    left: 10%;
+    top: 80px;
+  }
+  
+  .scroll .omascara {
+    width: 95%;
+    left: 2.5%;
+    top: 120px;
+  }
+  
+  .scroll .luzmascara {
+    width: 90%;
+    left: 5%;
+    top: 40px;
+  }
+  
+  .scroll .oizq,
+  .scroll .oder {
+    width: 50%;
+  }
+  
+  .scroll .oizq {
+    left: 50%;
+  }
+  
+  .scroll .btn-musica {
+    width: 50px;
+    height: 50px;
+    top: 60px;
+  }
+  
+  .scroll .por-favor-confirma {
+    width: 90%;
+    left: 5%;
+    top: 280px;
+  }
+  
+  .scroll .botonconfirmar {
+    width: 280px;
+    top: 480px;
+  }
+  
+  .scroll .botondireccion {
+    width: 300px;
+    top: 1000px;
+  }
+  
+  .scroll .calle {
+    width: 90%;
+    left: 5%;
+    top: 850px;
+  }
+  
+  .scroll .laion-eventos {
+    width: 90%;
+    left: 5%;
+    top: 750px;
+  }
+  
+  .scroll .element-PM {
+    width: 70%;
+    left: 15%;
+    top: 650px;
+  }
+  
+  .scroll .ohora,
+  .scroll .ohora-2 {
+    width: 60%;
+  }
+  
+  .scroll .ohora {
+    left: 40%;
+  }
+  
+  .scroll .ohora-2 {
+    left: 0;
+  }
+  
+  .scroll .element {
+    width: 40%;
+    left: 30%;
+    top: 550px;
+  }
+  
+  .scroll .element-de-enero {
+    width: 90%;
+    left: 5%;
+    top: 450px;
+  }
+  
+  .scroll .sbado {
+    width: 60%;
+    left: 20%;
+    top: 350px;
+  }
+  
+  .scroll .liston {
+    top: 250px;
+  }
+  
+  .scroll .o {
+    width: 80%;
+    left: 10%;
+    top: 150px;
+  }
+  
+  .scroll .aos {
+    width: 50%;
+    left: 25%;
+    top: 130px;
+  }
+  
+  .scroll .XV {
+    width: 45%;
+    left: 27.5%;
+    top: 50px;
+  }
+  
+  .scroll .o-s {
+    width: 80%;
+    left: 10%;
+    top: 0;
+  }
+  
+  .scroll .el-color-reservado {
+    width: 95%;
+    left: 2.5%;
+    font-size: 28px;
+    top: 0;
+  }
+  
+  .scroll .text-wrapper-2 {
+    font-size: 40px;
+  }
+  
+  .scroll .estrellasgracias {
+    top: 700px;
+  }
+  
+  .scroll .degradadoconfirmar {
+    top: 120px;
+  }
+  
+  .scroll .listonconfirmar {
+    top: 650px;
+  }
+  
+  .scroll .img {
+    top: 80px;
+  }
+  
+  .scroll .overlap {
+    top: 4000px;
+  }
+  
+  .scroll .overlap-2 {
+    top: 1000px;
+  }
+  
+  .scroll .overlap-3 {
+    top: 20px;
+  }
+  
+  .scroll .sobre {
+    width: 70%;
+    left: 15%;
+    top: 1300px;
+  }
+  
+  .scroll .degradado {
+    top: 300px;
+  }
+  
+  .scroll .listo {
+    top: 1200px;
+  }
+  
+  .scroll .overlap-group {
+    width: 90%;
+    left: 5%;
+    top: 3000px;
+  }
+  
+  .scroll .otrajes {
+    width: 90%;
+    left: 5%;
+  }
+  
+  .scroll .trajes {
+    width: 70%;
+    left: 15%;
+  }
+  
+  .scroll .ovestuario,
+  .scroll .ovestuario-2 {
+    width: 80%;
+    top: 3600px;
+  }
+  
+  .scroll .ovestuario-2 {
+    left: 20%;
+  }
+  
+  .scroll .cdigo-de-vestuario {
+    width: 80%;
+    left: 10%;
+    top: 3300px;
+  }
+  
+  .scroll .mujeres {
+    width: 70%;
+    left: 15%;
+    top: 3800px;
+  }
+  
+  .scroll .hombres {
+    width: 80%;
+    left: 10%;
+    top: 3800px;
+  }
+  
+  .scroll .lineamujer {
+    width: 70%;
+    left: 15%;
+    top: 3900px;
+  }
+  
+  .scroll .lineahombre {
+    width: 80%;
+    left: 10%;
+    top: 3900px;
+  }
+  
+  .scroll .traje-de-gala-con {
+    top: 4000px;
+  }
+  
+  .scroll .smoking-corbat-n-o {
+    top: 4000px;
+  }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 360px) {
+  .scroll .div {
+    min-height: 4500px;
+    padding: 0 5px;
+  }
+  
+  .scroll .countdown {
+    font-size: 32px;
+    top: 700px;
+  }
+  
+  .scroll .te-esperamos {
+    font-size: 28px;
+    top: 550px;
+  }
+  
+  .scroll .gracias-por-ser {
+    font-size: 22px;
+    top: 450px;
+  }
+  
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o {
+    font-size: 20px;
+  }
+  
+  .scroll .text-wrapper-4 {
+    font-size: 28px;
+    top: 2800px;
+  }
+  
+  .scroll .si-deseas-tener-un {
+    font-size: 20px;
+    top: 2400px;
+  }
+  
+  .scroll .MARIANA {
+    top: 350px;
+  }
+  
+  .scroll .mascara {
+    top: 60px;
+  }
+  
+  .scroll .omascara {
+    top: 100px;
+  }
+  
+  .scroll .luzmascara {
+    top: 30px;
+  }
+  
+  .scroll .btn-musica {
+    width: 45px;
+    height: 45px;
+    top: 50px;
+  }
+  
+  .scroll .botonconfirmar {
+    width: 250px;
+    top: 400px;
+  }
+  
+  .scroll .botondireccion {
+    width: 260px;
+    top: 850px;
+  }
+  
+  .scroll .overlap {
+    top: 3500px;
+  }
+  
+  .scroll .overlap-2 {
+    top: 850px;
+  }
+  
+  .scroll .overlap-3 {
+    top: 15px;
+  }
+  
+  .scroll .sobre {
+    top: 1100px;
+  }
+  
+  .scroll .degradado {
+    top: 250px;
+  }
+  
+  .scroll .listo {
+    top: 1000px;
+  }
+  
+  .scroll .overlap-group {
+    top: 2600px;
+  }
+  
+  .scroll .ovestuario,
+  .scroll .ovestuario-2 {
+    top: 3200px;
+  }
+  
+  .scroll .cdigo-de-vestuario {
+    top: 2900px;
+  }
+  
+  .scroll .mujeres {
+    top: 3300px;
+  }
+  
+  .scroll .hombres {
+    top: 3300px;
+  }
+  
+  .scroll .lineamujer {
+    top: 3400px;
+  }
+  
+  .scroll .lineahombre {
+    top: 3400px;
+  }
+  
+  .scroll .traje-de-gala-con {
+    top: 3500px;
+  }
+  
+  .scroll .smoking-corbat-n-o {
+    top: 3500px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .scroll .div {
+    min-height: 3000px;
+  }
+  
+  .scroll .countdown {
+    top: 600px;
+  }
+  
+  .scroll .te-esperamos {
+    top: 500px;
+  }
+  
+  .scroll .gracias-por-ser {
+    top: 400px;
+  }
+  
+  .scroll .MARIANA {
+    top: 200px;
+  }
+  
+  .scroll .mascara {
+    top: 50px;
+  }
+  
+  .scroll .omascara {
+    top: 80px;
+  }
+  
+  .scroll .luzmascara {
+    top: 20px;
+  }
+  
+  .scroll .btn-musica {
+    top: 40px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+  .scroll .div {
+    min-height: 4000px;
+  }
+  
+  .scroll .countdown {
+    font-size: 28px;
+    top: 600px;
+  }
+  
+  .scroll .te-esperamos {
+    font-size: 24px;
+    top: 450px;
+  }
+  
+  .scroll .gracias-por-ser {
+    font-size: 18px;
+    top: 350px;
+  }
+  
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o {
+    font-size: 18px;
+  }
+  
+  .scroll .text-wrapper-4 {
+    font-size: 24px;
+    top: 2400px;
+  }
+  
+  .scroll .si-deseas-tener-un {
+    font-size: 18px;
+    top: 2000px;
+  }
+  
+  .scroll .MARIANA {
+    top: 300px;
+  }
+  
+  .scroll .mascara {
+    top: 50px;
+  }
+  
+  .scroll .omascara {
+    top: 80px;
+  }
+  
+  .scroll .luzmascara {
+    top: 20px;
+  }
+  
+  .scroll .btn-musica {
+    width: 40px;
+    height: 40px;
+    top: 40px;
+  }
+  
+  .scroll .botonconfirmar {
+    width: 220px;
+    top: 350px;
+  }
+  
+  .scroll .botondireccion {
+    width: 230px;
+    top: 750px;
+  }
+  
+  .scroll .overlap {
+    top: 3000px;
+  }
+  
+  .scroll .overlap-2 {
+    top: 750px;
+  }
+  
+  .scroll .overlap-3 {
+    top: 10px;
+  }
+  
+  .scroll .sobre {
+    top: 950px;
+  }
+  
+  .scroll .degradado {
+    top: 200px;
+  }
+  
+  .scroll .listo {
+    top: 850px;
+  }
+  
+  .scroll .overlap-group {
+    top: 2200px;
+  }
+  
+  .scroll .ovestuario,
+  .scroll .ovestuario-2 {
+    top: 2800px;
+  }
+  
+  .scroll .cdigo-de-vestuario {
+    top: 2500px;
+  }
+  
+  .scroll .mujeres {
+    top: 2900px;
+  }
+  
+  .scroll .hombres {
+    top: 2900px;
+  }
+  
+  .scroll .lineamujer {
+    top: 3000px;
+  }
+  
+  .scroll .lineahombre {
+    top: 3000px;
+  }
+  
+  .scroll .traje-de-gala-con {
+    top: 3100px;
+  }
+  
+  .scroll .smoking-corbat-n-o {
+    top: 3100px;
+  }
+}

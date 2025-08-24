@@ -1,0 +1,254 @@
+/* ===== OPTIMIZACIONES PARA DISPOSITIVOS MÓVILES ===== */
+
+/* Mejoras de rendimiento para móviles */
+@media screen and (max-width: 768px) {
+  /* Optimizar animaciones en móviles */
+  .reveal {
+    will-change: auto;
+  }
+  
+  /* Reducir la intensidad del blur para mejor rendimiento */
+  :root {
+    --reveal-blur: 3px;
+    --reveal-duration: 0.6s;
+  }
+  
+  /* Mejorar la legibilidad del texto */
+  .scroll .countdown,
+  .scroll .te-esperamos,
+  .scroll .gracias-por-ser,
+  .scroll .traje-de-gala-con,
+  .scroll .smoking-corbat-n-o,
+  .scroll .text-wrapper-4,
+  .scroll .si-deseas-tener-un,
+  .scroll .el-color-reservado {
+    text-shadow: 0px 5px 5px #00000060;
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Mejorar el contraste de los botones */
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+  }
+  
+  /* Optimizar el botón de música para móviles */
+  .scroll .btn-musica {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .scroll .btn-musica:active {
+    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Mejorar la navegación táctil */
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    transition: transform 0.2s ease;
+  }
+  
+  .scroll .botonconfirmar:active,
+  .scroll .botondireccion:active {
+    transform: scale(0.98);
+  }
+  
+  /* Optimizar el scroll en móviles */
+  .scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Mejorar la legibilidad de elementos pequeños */
+  .scroll .element,
+  .scroll .element-de-enero,
+  .scroll .sbado,
+  .scroll .ohora,
+  .scroll .ohora-2 {
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
+
+/* Optimizaciones específicas para pantallas muy pequeñas */
+@media screen and (max-width: 360px) {
+  /* Reducir aún más el blur para pantallas pequeñas */
+  :root {
+    --reveal-blur: 2px;
+    --reveal-duration: 0.5s;
+  }
+  
+  /* Mejorar el espaciado en pantallas muy pequeñas */
+  .scroll .div {
+    padding: 0 8px;
+  }
+  
+  /* Ajustar el tamaño mínimo de elementos táctiles */
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    min-height: 50px;
+    min-width: 200px;
+  }
+  
+  /* Mejorar la legibilidad del countdown */
+  .scroll .countdown {
+    line-height: 1.2;
+    word-spacing: 2px;
+  }
+}
+
+/* Optimizaciones para orientación landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  /* Ajustar el layout para pantallas landscape */
+  .scroll .div {
+    min-height: 2500px;
+  }
+  
+  /* Reposicionar elementos clave para mejor visibilidad */
+  .scroll .MARIANA {
+    top: 150px;
+    font-size: 60px;
+  }
+  
+  .scroll .mascara {
+    top: 40px;
+    width: 60%;
+    left: 20%;
+  }
+  
+  .scroll .omascara {
+    top: 60px;
+    width: 70%;
+    left: 15%;
+  }
+  
+  .scroll .luzmascara {
+    top: 20px;
+    width: 60%;
+    left: 20%;
+  }
+  
+  .scroll .btn-musica {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Ajustar el countdown para landscape */
+  .scroll .countdown {
+    top: 400px;
+    font-size: 35px;
+  }
+  
+  .scroll .te-esperamos {
+    top: 350px;
+    font-size: 30px;
+  }
+  
+  .scroll .gracias-por-ser {
+    top: 300px;
+    font-size: 24px;
+  }
+}
+
+/* Mejoras para dispositivos con notch o pantallas irregulares */
+@supports (padding: max(0px)) {
+  .scroll .btn-musica {
+    top: max(20px, env(safe-area-inset-top) + 10px);
+    right: max(20px, env(safe-area-inset-right) + 10px);
+  }
+}
+
+/* Optimizaciones para dispositivos de baja potencia */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+  }
+  
+  .scroll .btn-musica,
+  .scroll .botonconfirmar,
+  .scroll .botondireccion {
+    transition: none;
+  }
+}
+
+/* Mejoras para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .scroll .btn-musica {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Optimizaciones para lectores de pantalla */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll .countdown {
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Mejoras para dispositivos con pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .scroll .btn-musica img,
+  .scroll .botonconfirmar img,
+  .scroll .botondireccion img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Ajustes para dispositivos con teclado virtual */
+@media screen and (max-height: 400px) {
+  .scroll .div {
+    min-height: 2000px;
+  }
+  
+  .scroll .MARIANA {
+    top: 100px;
+    font-size: 50px;
+  }
+  
+  .scroll .mascara {
+    top: 30px;
+    width: 50%;
+    left: 25%;
+  }
+  
+  .scroll .omascara {
+    top: 50px;
+    width: 60%;
+    left: 20%;
+  }
+  
+  .scroll .luzmascara {
+    top: 15px;
+    width: 50%;
+    left: 25%;
+  }
+  
+  .scroll .btn-musica {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+}

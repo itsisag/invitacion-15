@@ -1,0 +1,490 @@
+/* ===== DISTRIBUCIÓN Y PROPORCIONES DE IMÁGENES ===== */
+
+/* Asegurar que todas las imágenes mantengan sus proporciones originales */
+.scroll img {
+  object-fit: contain;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Sistema de distribución proporcional para la sección superior */
+.scroll .overlap-3 {
+  display: grid;
+  grid-template-areas: 
+    "decor-left mascara decor-right"
+    "decor-left luzmascara decor-right"
+    "decor-left MARIANA decor-right";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 1211px;
+  min-height: 600px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Posicionamiento de elementos en el grid */
+.scroll .oder {
+  grid-area: decor-left;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1.1;
+}
+
+.scroll .mascara {
+  grid-area: mascara;
+  width: 100%;
+  max-width: 514px;
+  height: auto;
+  aspect-ratio: 1;
+  z-index: 2;
+}
+
+.scroll .oizq {
+  grid-area: decor-right;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1.11;
+}
+
+.scroll .luzmascara {
+  grid-area: luzmascara;
+  width: 100%;
+  max-width: 568px;
+  height: auto;
+  aspect-ratio: 0.88;
+  z-index: 1;
+}
+
+.scroll .MARIANA {
+  grid-area: MARIANA;
+  width: 100%;
+  max-width: 681px;
+  height: auto;
+  aspect-ratio: 6.25;
+  z-index: 3;
+}
+
+/* Distribución de la sección XV años */
+.scroll .liston {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1211px;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.scroll .o-s,
+.scroll .XV,
+.scroll .aos,
+.scroll .o {
+  width: 100%;
+  max-width: 647px;
+  height: auto;
+  aspect-ratio: 2.48;
+  object-fit: contain;
+}
+
+.scroll .XV {
+  max-width: 259px;
+  aspect-ratio: 1.9;
+}
+
+.scroll .aos {
+  max-width: 282px;
+  aspect-ratio: 3.1;
+}
+
+.scroll .o {
+  max-width: 639px;
+  aspect-ratio: 3.15;
+}
+
+/* Distribución de fecha y hora */
+.scroll .element-de-enero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 578px;
+  padding: 30px 20px;
+  gap: 15px;
+}
+
+.scroll .sbado,
+.scroll .element,
+.scroll .ohora,
+.scroll .ohora-2,
+.scroll .element-PM {
+  width: 100%;
+  max-width: 578px;
+  height: auto;
+  aspect-ratio: 8.26;
+  object-fit: contain;
+}
+
+.scroll .sbado {
+  max-width: 258px;
+  aspect-ratio: 4.45;
+}
+
+.scroll .element {
+  max-width: 139px;
+  aspect-ratio: 2.96;
+}
+
+.scroll .ohora,
+.scroll .ohora-2 {
+  max-width: 314px;
+  aspect-ratio: 8.97;
+}
+
+.scroll .element-PM {
+  max-width: 366px;
+  aspect-ratio: 5.01;
+}
+
+/* Distribución de dirección */
+.scroll .calle,
+.scroll .laion-eventos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 708px;
+  padding: 30px 20px;
+  gap: 20px;
+}
+
+.scroll .calle {
+  max-width: 546px;
+  aspect-ratio: 4.75;
+}
+
+.scroll .laion-eventos {
+  max-width: 708px;
+  aspect-ratio: 10.73;
+}
+
+/* Distribución de botones */
+.scroll .botondireccion,
+.scroll .botonconfirmar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 541px;
+  height: auto;
+  aspect-ratio: 4.62;
+  margin: 25px auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.scroll .botonconfirmar {
+  max-width: 465px;
+  aspect-ratio: 3.97;
+}
+
+/* Distribución de sección de confirmación */
+.scroll .degradadoconfirmar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1211px;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.scroll .por-favor-confirma,
+.scroll .img,
+.scroll .el-color-reservado {
+  width: 100%;
+  max-width: 1051px;
+  height: auto;
+  aspect-ratio: 2.34;
+  object-fit: contain;
+}
+
+.scroll .degradadoconfirmar {
+  max-width: 1211px;
+  aspect-ratio: 1.38;
+}
+
+.scroll .por-favor-confirma {
+  max-width: 669px;
+  aspect-ratio: 3.64;
+}
+
+.scroll .img {
+  max-width: 1211px;
+  aspect-ratio: 4.84;
+}
+
+/* Distribución de agradecimiento */
+.scroll .estrellasgracias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1211px;
+  padding: 40px 20px;
+  gap: 25px;
+}
+
+.scroll .gracias-por-ser,
+.scroll .te-esperamos {
+  width: 100%;
+  max-width: 1055px;
+  height: auto;
+  aspect-ratio: 1.64;
+  object-fit: contain;
+}
+
+.scroll .estrellasgracias {
+  max-width: 1211px;
+  aspect-ratio: 1.88;
+}
+
+.scroll .te-esperamos {
+  max-width: 891px;
+  aspect-ratio: 8.91;
+}
+
+/* Countdown centrado */
+.scroll .countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: clamp(40px, 8vw, 120px);
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+/* Distribución de vestuario */
+.scroll .cdigo-de-vestuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 584px;
+  padding: 30px 20px;
+  gap: 20px;
+}
+
+.scroll .ovestuario,
+.scroll .ovestuario-2 {
+  width: 100%;
+  max-width: 584px;
+  height: auto;
+  aspect-ratio: 3.24;
+  object-fit: contain;
+}
+
+.scroll .ovestuario-2 {
+  max-width: 585px;
+  aspect-ratio: 3.25;
+}
+
+/* Distribución de trajes */
+.scroll .overlap-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 474px;
+  padding: 30px 20px;
+  gap: 20px;
+}
+
+.scroll .otrajes,
+.scroll .trajes {
+  width: 100%;
+  max-width: 474px;
+  height: auto;
+  aspect-ratio: 1.77;
+  object-fit: contain;
+}
+
+.scroll .trajes {
+  max-width: 273px;
+  aspect-ratio: 1.03;
+}
+
+/* Distribución de textos de vestuario */
+.scroll .si-deseas-tener-un,
+.scroll .text-wrapper-4,
+.scroll .traje-de-gala-con,
+.scroll .smoking-corbat-n-o {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 919px;
+  height: auto;
+  aspect-ratio: 14.36;
+  object-fit: contain;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.scroll .text-wrapper-4 {
+  max-width: 659px;
+  aspect-ratio: 6.86;
+}
+
+.scroll .traje-de-gala-con,
+.scroll .smoking-corbat-n-o {
+  max-width: 404px;
+  aspect-ratio: 8.08;
+}
+
+/* Distribución de líneas decorativas */
+.scroll .lineamujer,
+.scroll .lineahombre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 484px;
+  height: auto;
+  aspect-ratio: 96.8;
+  object-fit: contain;
+  margin: 15px auto;
+}
+
+.scroll .lineamujer {
+  max-width: 430px;
+  aspect-ratio: 86;
+}
+
+/* Distribución de imágenes de género */
+.scroll .mujeres,
+.scroll .hombres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 456px;
+  height: auto;
+  aspect-ratio: 5.01;
+  object-fit: contain;
+  margin: 20px auto;
+}
+
+.scroll .mujeres {
+  max-width: 392px;
+  aspect-ratio: 4.31;
+}
+
+/* Distribución del sobre */
+.scroll .sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 523px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 30px auto;
+}
+
+/* Distribución del degradado */
+.scroll .degradado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1211px;
+  height: auto;
+  aspect-ratio: 0.81;
+  object-fit: contain;
+  margin: 20px auto;
+}
+
+/* Distribución del listón */
+.scroll .listo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1211px;
+  height: auto;
+  aspect-ratio: 4.84;
+  object-fit: contain;
+  margin: 20px auto;
+}
+
+/* Media queries para responsive */
+@media screen and (max-width: 1024px) {
+  .scroll .overlap-3 {
+    grid-template-columns: 0.8fr 2.4fr 0.8fr;
+    gap: 15px;
+    padding: 30px 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scroll .overlap-3 {
+    grid-template-areas: 
+      "mascara"
+      "luzmascara"
+      "MARIANA"
+      "decor-left"
+      "decor-right";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+  
+  .scroll .oder,
+  .scroll .oizq {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .scroll .overlap-3 {
+    gap: 15px;
+    padding: 15px 10px;
+  }
+  
+  .scroll .oder,
+  .scroll .oizq {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .scroll .overlap-3 {
+    gap: 12px;
+    padding: 12px 8px;
+  }
+  
+  .scroll .oder,
+  .scroll .oizq {
+    max-width: 120px;
+  }
+}
