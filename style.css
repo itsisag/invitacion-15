@@ -1198,13 +1198,25 @@
 
 /* Móviles grandes */
 @media screen and (max-width: 480px) {
-  .scroll .div {
-    min-height: 5000px;
-    padding: 0 10px;
+
+  /* Contenedor general */
+  .scroll {
+    height: 3355px;
+    /* la altura de la pantalla del dispositivo */
+    overflow-y: hidden;
+    /* corta lo que sobre */
+    position: relative;
   }
 
-
-
+  /* El div interno ya no necesita min-height fijo */
+  .scroll .div {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
 
   .scroll .traje-de-gala-con,
   .scroll .smoking-corbat-n-o {
@@ -1483,7 +1495,7 @@
     line-height: 1.1;
     /* Ajusta el valor: 1, 1.1, 1.2, etc. */
   }
-  
+
   .scroll .traje-de-gala-con {
     font-size: 22px;
     width: 39%;
