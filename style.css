@@ -1520,6 +1520,7 @@
   .scroll .botonconfirmar {
     width: 280px;
     top: -1066px;
+    z-index: 10;
   }
 
   .scroll .listonconfirmar {
