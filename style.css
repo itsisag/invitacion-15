@@ -1201,7 +1201,7 @@
 
   /* Contenedor general */
   .scroll {
-    height: 3355px;
+    height: 500%;
     /* la altura de la pantalla del dispositivo */
     overflow-y: hidden;
     /* corta lo que sobre */
@@ -1216,30 +1216,6 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-  }
-
-  .scroll .traje-de-gala-con,
-  .scroll .smoking-corbat-n-o {
-    font-size: 24px;
-    width: 90%;
-    left: 2.5%;
-  }
-
-  .scroll .text-wrapper-4 {
-    font-size: 35px;
-    top: 3200px;
-  }
-
-  .scroll .acompame-a-celebrar {
-    width: 98%;
-    left: 1%;
-    top: 800px;
-  }
-
-  .scroll .estoy-por-vivir-un {
-    width: 98%;
-    left: 1%;
-    top: 650px;
   }
 
   /* DONE */
@@ -1260,246 +1236,234 @@
   .scroll .omascara {
     width: 70%;
     left: 14.5%;
-    top: 84px;
+    top: 10%;
   }
 
   .scroll .mascara {
     width: 45%;
     left: 27%;
-    top: 64px;
+    top: 9%;
   }
 
   .scroll .luzmascara {
     width: 80%;
     left: 9%;
-    top: -40px;
+    top: -2%;
   }
 
   .scroll .MARIANA {
     width: 58%;
     left: 20.5%;
-    top: 300px;
+    top: 38%;
   }
 
   .scroll .hay-momentos-que-se {
     width: 81%;
     left: 10%;
-    top: 390px;
+    top: 6.5%;
   }
 
   .scroll .ointermedio-2 {
     width: 26%;
     left: 37%;
-    top: 436px;
+    top: 7.3%;
   }
 
   .scroll .estoy-por-vivir-un {
     width: 81%;
     left: 10%;
-    top: 452px;
+    top: 7.5%;
   }
 
   .scroll .ointermedio-1 {
     width: 26%;
     left: 37%;
-    top: 535px;
+    top: 8.9%;
   }
 
   .scroll .acompame-a-celebrar {
     width: 81%;
     left: 10%;
-    top: 552px;
+    top: 9.2%;
   }
 
   .scroll .o-s {
     width: 55%;
     left: 23%;
-    top: -325PX;
+    top: -13%;
   }
 
   .scroll .XV {
     width: 23%;
     left: 39.5%;
-    top: -44vh;
+    top: -11.5%;
   }
 
   .scroll .o {
     width: 55%;
     left: 23%;
-    top: -209px;
+    top: -8%;
   }
 
   .scroll .aos {
-    width: 18vh;
+    width: 26%;
     left: 38%;
-    top: -33vh;
+    top: -8.5%;
   }
 
   .scroll .liston {
-    top: -125px;
+    top: -4.5%;
   }
 
   .scroll .degradado {
-    top: -12vh;
+    top: -3%;
   }
 
   .scroll .sbado {
     width: 32%;
     left: 36%;
-    top: 0px;
+    top: 0%;
   }
 
   .scroll .element-de-enero {
     width: 60%;
     left: 22%;
-    top: 53px;
+    top: 2%;
   }
 
   .scroll .element {
     width: 18%;
     left: 42%;
-    top: 105px;
+    top: 4%;
   }
 
   .scroll .element-PM {
     width: 34%;
     left: 33%;
-    top: 25vh;
+    top: 6.5%;
   }
 
   .scroll .listo {
-    top: 68vh;
+    top: 17%;
   }
 
   .scroll .ohora {
     width: 24%;
     left: 69%;
-    top: 26vh;
+    top: 6.8%;
   }
 
   .scroll .ohora-2 {
     width: 24%;
     left: 6%;
-    top: 26vh;
-  }
-
-  .scroll .line {
-    left: 33px;
-    position: absolute;
-    width: 117px;
-    height: 5px;
-    top: 6px;
+    top: 6.8%;
   }
 
   .scroll .laion-eventos {
     width: 58%;
     left: 20%;
-    top: 35vh;
+    top: 9%;
   }
 
   .scroll .calle {
     width: 44%;
     left: 27%;
-    top: 42vh;
+    top: 11%;
   }
 
   .scroll .botondireccion {
     width: 55%;
-    top: 55vh;
+    top: 14%;
   }
 
   .scroll .sobre {
     width: 50%;
     left: 25%;
-    top: 78vh;
+    top: 20%;
   }
 
   .scroll .si-deseas-tener-un {
-    font-size: 25px;
-    top: 263VH;
-  }
-
-  .scroll .text-wrapper {
-    width: 300px;
+    font-size: 155%;
+    top: 29%;
   }
 
   .scroll .text-wrapper-5 {
     font-family: 'Aboreto', sans-serif;
     color: #000000;
-    font-size: 40px;
+    font-size: 155%;
   }
 
   .scroll .trajes {
     width: 31%;
     left: 37%;
-    top: -160vh;
+    top: -306%;
   }
 
   .scroll .otrajes {
     width: 61%;
     left: 20%;
-    top: -157vh;
+    top: -302%;
   }
 
   .scroll .cdigo-de-vestuario {
     width: 55%;
     left: 23%;
-    top: 2137px;
+    top: 35.3%;
   }
 
   .scroll .text-wrapper-4 {
-    font-size: 40px;
-    top: 2244px;
+    font-size: 225%;
+    top: 37%;
   }
 
   .scroll .ovestuario {
     width: 50%;
-    top: 2310px;
+    top: 38.5%;
   }
 
   .scroll .ovestuario-2 {
     left: 51%;
     width: 48%;
-    top: 2310px;
+    top: 38.5%;
   }
 
   .scroll .mujeres {
     width: 37%;
     left: 55%;
-    top: 2424px;
+    top: 40.5%;
   }
 
   .scroll .hombres {
     width: 37%;
     left: 10%;
-    top: 2424px;
+    top: 40.5%;
   }
 
   .scroll .lineamujer {
     width: 39%;
     left: 54%;
-    top: 2467px;
+    top: 41.2%;
   }
 
   .scroll .lineahombre {
     width: 39%;
     left: 9%;
-    top: 2467px;
+    top: 41.2%;
   }
 
   .scroll .smoking-corbat-n-o {
-    font-size: 22px;
+    font-size: 138%;
     width: 39%;
-    top: 2457px;
+    top: 41%;
     left: 9%;
     line-height: 1.1;
     /* Ajusta el valor: 1, 1.1, 1.2, etc. */
   }
 
   .scroll .traje-de-gala-con {
-    font-size: 22px;
+    font-size: 138%;
     width: 39%;
-    top: 2457px;
+    top: 41%;
     line-height: 1.1;
     left: 54%;
   }
@@ -1507,41 +1471,41 @@
   .scroll .el-color-reservado {
     width: 95%;
     left: 2.5%;
-    font-size: 19px;
-    top: -1391px;
+    font-size: 135%;
+    top: -81%;
   }
 
   .scroll .text-wrapper-2 {
-    font-size: 30px;
+    font-size: 144%;
   }
 
   .scroll .img {
-    top: -1313px;
+    top: -76.5%;
   }
 
   .scroll .degradadoconfirmar {
-    top: -1278px;
+    top: -73%;
   }
 
   .scroll .por-favor-confirma {
     width: 57%;
     left: 21%;
-    top: -1181px;
+    top: -68.5%;
   }
 
   .scroll .botonconfirmar {
-    width: 280px;
-    top: -1066px;
+    width: 50%;
+    top: -62%;
     z-index: 10;
   }
 
   .scroll .listonconfirmar {
-    top: -966px;
+    top: -57%;
   }
 
   .scroll .gracias-por-ser {
-    font-size: 28px;
-    top: -919px;
+    font-size: 175%;
+    top: -54.5%;
   }
 
   .scroll .span {
@@ -1550,17 +1514,17 @@
   }
 
   .scroll .te-esperamos {
-    font-size: 35px;
-    top: -777px;
+    font-size: 185%;
+    top: -45.5%;
   }
 
   .scroll .estrellasgracias {
-    top: -912px;
+    top: -55%;
   }
 
   .scroll .countdown {
-    font-size: 40px;
-    top: -720px;
+    font-size: 212%;
+    top: -43%;
   }
 
   /* DONE */
