@@ -1525,6 +1525,7 @@
   .scroll .countdown {
     font-size: 212%;
     top: -43%;
+    z-index: 10;
   }
 
   /* DONE */
